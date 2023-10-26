@@ -1,0 +1,36 @@
+body {
+  background-color: #fff;
+  font-family: sans-serif;
+}
+
+.result-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.result-text {
+  font-size: 18px;
+}
+
+.btn-secondary {
+  background-color: #4267b2;
+  border-color: #4267b2;
+  color: #fff;
+  font-weight: bold;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus,
+.btn-secondary:active,
+.btn-secondary.active {
+  background-color: #3558a3;
+  border-color: #3558a3;
+  color: #fff;
+}

@@ -1,0 +1,15 @@
+.my-class {
+	font-size: 16px;
+	color: #336699;
+	background-color: #f4f4f4;
+	margin: 10px;
+	padding: 5px;
+}
+
+.another-class {
+	font-size: 14px;
+	color: #ff6347;
+	background-color: #00ff00;
+	margin: 8px;
+	padding: 3px
+}

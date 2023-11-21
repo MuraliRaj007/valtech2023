@@ -1,9 +1,9 @@
 package com.valtech.training.patternchecker;
 
 import java.util.List;
+import java.util.Map;
 
 public interface PatternCheckerService {
 	
-	public List<String> listPatterns(String mobile);
-
+	Map<String, Integer> checkPatterns(List<String> phoneNumbers);
 }

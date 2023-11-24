@@ -2,6 +2,7 @@ package com.valtech.training.ordersummary;
 
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -27,10 +28,10 @@ public class Order {
 			CascadeType.REFRESH }, fetch = FetchType.EAGER)
 	@JoinColumn(name = "customer_id", referencedColumnName = "id")
 	private Customer customer;
-	@OneToMany(targetEntity = OrderSummary.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "order")
+	@OneToMany(targetEntity = OrderSummary.class, mappedBy = "order")
 	private Set<OrderSummary> orderSummaries;
 
-	public void addOrderSummary(OrderSummary orderSummary) {
+	public void addOrderSummaries(OrderSummary orderSummary) {
 		if (getOrderSummaries() == null) {
 			setOrderSummaries(new HashSet<OrderSummary>());
 		}

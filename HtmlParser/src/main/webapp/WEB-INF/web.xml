@@ -1,7 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
-  <display-name>HtmlParser</display-name>
-  <welcome-file-list>
-    <welcome-file>htmlParser.jsp</welcome-file>
-  </welcome-file-list>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<display-name>HtmlParser</display-name>
+
+	<servlet>
+		<servlet-name>HtmlParserServlet</servlet-name>
+		<servlet-class>htmlParser.HtmlParserServlet</servlet-class>
+		<multipart-config>
+			<!-- Set maximum file size allowed -->
+			<max-file-size>20848820</max-file-size> <!-- Size in bytes, here 20MB -->
+			<!-- Set maximum request size allowed -->
+			<max-request-size>418018841</max-request-size> <!-- Size in bytes, here 40MB -->
+			<!-- Set size threshold after which files will be written to disk -->
+			<file-size-threshold>1048576</file-size-threshold> <!-- Size in bytes, here 1MB -->
+		</multipart-config>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>HtmlParserServlet</servlet-name>
+		<url-pattern>/HtmlParserServlet</url-pattern>
+	</servlet-mapping>
+
+	<welcome-file-list>
+		<welcome-file>htmlParser.jsp</welcome-file>
+	</welcome-file-list>
 </web-app>

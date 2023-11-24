@@ -1,6 +1,7 @@
 package com.valtech.training.ordersummary;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -25,10 +26,10 @@ public class Product {
 			CascadeType.REFRESH }, fetch = FetchType.EAGER)
 	@JoinColumn(name = "manufacturer_id", referencedColumnName = "id")
 	private Manufacturer manufacturer;
-	@OneToMany(targetEntity = OrderSummary.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "product")
+	@OneToMany(targetEntity = OrderSummary.class, mappedBy = "product")
 	private Set<OrderSummary> orderSummaries;
-
-	public void addOrderSummary(OrderSummary orderSummary) {
+	
+	public void addOrderSummaries(OrderSummary orderSummary) {
 		if (getOrderSummaries() == null) {
 			setOrderSummaries(new HashSet<OrderSummary>());
 		}
